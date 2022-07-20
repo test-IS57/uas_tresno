@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\JabatanController;
+use App\Http\Controllers\KaryawanController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +22,19 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// route jabatan
+Route::get('/jabatan', [JabatanController::class, 'index']);
+Route::get('/jabatan/form', [JabatanController::class, 'create']);
+Route::post('/jabatan/store', [JabatanController::class, 'store']);
+Route::get('/jabatan/edit/{id}', [JabatanController::class, 'edit']);
+Route::put('/jabatan/{id}', [JabatanController::class, 'update']);
+Route::delete('/jabatan/{id}', [JabatanController::class, 'destroy']);
+
+// route jabatan
+Route::get('/karyawan', [KaryawanController::class, 'index']);
+Route::get('/karyawan/form', [KaryawanController::class, 'create']);
+Route::post('/karyawan/store', [KaryawanController::class, 'store']);
+Route::get('/karyawan/edit/{id}', [KaryawanController::class, 'edit']);
+Route::put('/karyawan/{id}', [KaryawanController::class, 'update']);
+Route::delete('/karyawan/{id}', [KaryawanController::class, 'destroy']);
