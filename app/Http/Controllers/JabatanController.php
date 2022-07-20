@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Jabatan;
 
 class JabatanController extends Controller
 {
@@ -16,10 +17,12 @@ class JabatanController extends Controller
     {
         $this->middleware('auth');
     }
-    
+
     public function index()
     {
-        //
+        $nomor = 1;
+        $jabatan = Jabatan::all();
+        return view('jabatan.index',compact('nomor','jabatan'));
     }
 
     /**
@@ -29,7 +32,7 @@ class JabatanController extends Controller
      */
     public function create()
     {
-        //
+        return view('jabatan.form');
     }
 
     /**
@@ -40,7 +43,13 @@ class JabatanController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $jabatan = new Jabatan;
+
+        $jabatan->kode = $request->kode;
+        $jabatan->jabatan = $request->jabatan;
+        $jabatan->save();
+
+        return redirect('/jabatan');
     }
 
     /**

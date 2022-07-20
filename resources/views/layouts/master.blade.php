@@ -8,7 +8,7 @@
     <!-- Google Font: Source Sans Pro -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="{{asset('plugins/fontawesome-free/css/all.min.css')}}">
+    <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{asset('dist/css/adminlte.min.css')}}">
     </head>
@@ -64,7 +64,7 @@
             </li>
             <li class="nav-header">DATA MASTER</li>
             <li class="nav-item">
-                <a href="/" class="nav-link">
+                <a href="/jabatan" class="nav-link">
                 <i class="nav-icon far fa-calendar-alt"></i>
                 <p>
                     Data Jabatan
@@ -72,7 +72,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="../gallery.html" class="nav-link">
+                <a href="/karyawan" class="nav-link">
                 <i class="nav-icon far fa-image"></i>
                 <p>
                     Data Karyawan
