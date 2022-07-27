@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Karyawan extends Model
 {
-    use HasFactory;
+    public function jabatans(){
+        return $this->hasOne(Jabatan::class,'id','jabatans_id');
+    }
 }

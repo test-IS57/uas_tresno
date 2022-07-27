@@ -7,5 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Jabatan extends Model
 {
-    use HasFactory;
+    public function karyawan(){
+        return this->belongTo(Karyawan::class);
+    }
 }
