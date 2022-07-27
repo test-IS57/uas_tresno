@@ -64,12 +64,7 @@
                       <input type="date" class="form-control" id="inputPassword3" value="{{$karyawan->tanggal_lahir}}" name="tanggal">
                     </div>
                   </div>
-                  <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">Email</label>
-                    <div class="col-sm-10">
-                      <input type="email" class="form-control" id="inputPassword3" value="{{$karyawan->email}}" name="email">
-                    </div>
-                  </div>
+                  
                   <div class="form-group row">
                     <label for="inputPassword3" class="col-sm-2 col-form-label">Jabatan</label>
                     <div class="col-sm-10">
@@ -89,23 +84,7 @@
                       <input type="text" class="form-control" id="inputPassword3" value="{{$karyawan->alamat}}" name="alamat">
                     </div>
                   </div>
-                  <div class="form-group row">
-                    <label for="inputPassword3" class="col-sm-2 col-form-label">Pendidikan Terakhir</label>
-                    <div class="col-sm-10">
-                      <select name="pendidikan" class="form-control" id="">
-                        <option value="">-Pilih Pendidikan Terakhir-</option>
-                        <option value="Doktor (S3)" {{$karyawan->pendidikan_terakhir=='Doktor (S3)' ? 'selected' : ''}}>Doktor (S3)</option>
-                        <option value="Magister (S2)" {{$karyawan->pendidikan_terakhir=='Magister (S2)' ? 'selected' : ''}}>Magister (S2)</option>
-                        <option value="Sarjana (S1)" {{$karyawan->pendidikan_terakhir=='Sarjana (S1)' ? 'selected' : ''}}>Sarjana (S1)</option>
-                        <option value="Sarjana Terapan (D4)" {{$karyawan->pendidikan_terakhir=='Sarjana Terapan (D4)' ? 'selected' : ''}}>Sarjana Terapan (D4)</option>
-                        <option value="Ahli Madya (D3)" {{$karyawan->pendidikan_terakhir=='Ahli Madya (D3)' ? 'selected' : ''}}>Ahli Madya (D3)</option>
-                        <option value="Ahli Muda (D2)" {{$karyawan->pendidikan_terakhir=='Ahli Muda (D2)' ? 'selected' : ''}}>Ahli Muda (D2)</option>
-                        <option value="SMA" {{$karyawan->pendidikan_terakhir=='SMA' ? 'selected' : ''}}>SMA</option>
-                        <option value="SMP" {{$karyawan->pendidikan_terakhir=='SMP' ? 'selected' : ''}}>SMP</option>
-                        <option value="SD" {{$karyawan->pendidikan_terakhir=='SD' ? 'selected' : ''}}>SD</option>
-                      </select>
-                    </div>
-                  </div>
+                  
                 </div>
                 <!-- /.card-body -->
                 <div class="card-footer">

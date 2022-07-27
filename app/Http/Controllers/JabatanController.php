@@ -43,7 +43,7 @@ class JabatanController extends Controller
      */
     public function store(Request $request)
     {
-        $this->authorize('create',Jabatan::class);
+        
         $jab = new Jabatan;
 
         $jab->kode = $request->kode;

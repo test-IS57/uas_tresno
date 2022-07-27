@@ -25,9 +25,8 @@
     <!-- Default box -->
     <div class="card">
         <div class="card-header">
-        @can('create',App\Jabatan::class)
         <a href="/jabatan/form" class="btn btn-primary">Tambah Data</a>
-        @endcan
+        
 
         <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">

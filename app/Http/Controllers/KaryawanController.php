@@ -50,10 +50,8 @@ class KaryawanController extends Controller
         $kar->nama = $request->nama;
         $kar->tempat_lahir = $request->tempat;
         $kar->tanggal_lahir = $request->tanggal;
-        $kar->email = $request->email;
         $kar->jabatans_id = $request->jabatan;
         $kar->alamat = $request->alamat;
-        $kar->pendidikan_terakhir = $request->pendidikan;
         $kar->save();
 
         return redirect('/karyawan');
@@ -98,10 +96,8 @@ class KaryawanController extends Controller
         $kar->nama = $request->nama;
         $kar->tempat_lahir = $request->tempat;
         $kar->tanggal_lahir = $request->tanggal;
-        $kar->email = $request->email;
         $kar->jabatans_id = $request->jabatan;
         $kar->alamat = $request->alamat;
-        $kar->pendidikan_terakhir = $request->pendidikan;
         $kar->save();
 
         return redirect('/karyawan');
