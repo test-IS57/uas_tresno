@@ -63,6 +63,7 @@
                 </a>
             </li>
             <li class="nav-header">DATA MASTER</li>
+            @can('create',App\Jabatan::class)
             <li class="nav-item">
                 <a href="/jabatan" class="nav-link">
                 <i class="nav-icon far fa-calendar-alt"></i>
@@ -71,6 +72,7 @@
                 </p>
                 </a>
             </li>
+            @endcan
             <li class="nav-item">
                 <a href="/karyawan" class="nav-link">
                 <i class="nav-icon far fa-image"></i>
