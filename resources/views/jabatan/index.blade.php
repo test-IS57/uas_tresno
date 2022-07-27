@@ -25,7 +25,9 @@
     <!-- Default box -->
     <div class="card">
         <div class="card-header">
-        <a href="/jabatan/form" class="btn btn-primary">Tambah Jabatan</a>
+        @can('create',App\Jabatan::class)
+        <a href="/jabatan/form" class="btn btn-primary">Tambah Data</a>
+        @endcan
 
         <div class="card-tools">
             <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
@@ -36,7 +38,7 @@
             </button>
         </div>
         </div>
-            <div class="card-body table-responsive p-0">
+        <div class="card-body table-responsive p-0">
                 <table class="table table-hover text-nowrap">
                 <thead>
                     <tr>
@@ -53,21 +55,45 @@
                         <td>{{$item->kode}}</td>
                         <td>{{$item->jabatan}}</td>
                         <td>
-                            <a href="/" class="btn btn-info btn-sm">edit</a>
-                            <a href="/" class="btn btn-danger btn-sm">hapus</a>
+                            <a href="/jabatan/edit/{{$item->id}}" class="btn btn-sm text-white btn-info"><i class="fa fa-pencil-alt"></i></a>
+                                <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#a{{$item->id}}">
+                                  <i class="fa fa-trash-alt"></i>
+                                </button>
+                                
+                                <!-- Modal -->
+                                <div class="modal fade" id="a{{$item->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog">
+                                    <div class="modal-content">
+                                      <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Peringatan</h5>
+                                      </div>
+                                      <div class="modal-body">
+                                        Yakin ingin menghapus jabatan <b>{{$item->kode}}-{{$item->jabatan}}</b> ?
+                                      </div>
+                                      <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
+                                        <form method="POST" action="/jabatan/{{$item->id}}">
+                                          @csrf
+                                          @method('DELETE')
+                                          <button type="submit" class="btn btn-primary">Hapus</button>
+                                        </form>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
                         </td>
-                    </tr>
+                    </tr> 
                     @empty
-                        <tr>
-                            <td colspan="4">Belum Ada Data</td>
-                        </tr>
+                    <tr>
+                        <td colspan="4">Belum Ada Data</td>
+                    </tr>
                     @endforelse
                     
                 </tbody>
                 </table>
             </div>
         <!-- /.card-body -->
-       
+        
         <!-- /.card-footer-->
     </div>
     <!-- /.card -->

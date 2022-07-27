@@ -12,14 +12,14 @@ class JabatanController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-
     public function __construct()
     {
         $this->middleware('auth');
     }
-
+    
     public function index()
     {
+        // $this->authorize('create',Jabatan::class);
         $nomor = 1;
         $jabatan = Jabatan::all();
         return view('jabatan.index',compact('nomor','jabatan'));
@@ -43,11 +43,12 @@ class JabatanController extends Controller
      */
     public function store(Request $request)
     {
-        $jabatan = new Jabatan;
+        $this->authorize('create',Jabatan::class);
+        $jab = new Jabatan;
 
-        $jabatan->kode = $request->kode;
-        $jabatan->jabatan = $request->jabatan;
-        $jabatan->save();
+        $jab->kode = $request->kode;
+        $jab->jabatan = $request->jabatan;
+        $jab->save();
 
         return redirect('/jabatan');
     }
@@ -71,7 +72,9 @@ class JabatanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $jabatan = Jabatan::find($id);
+        return view('jabatan.edit',compact('jabatan'));
+        
     }
 
     /**
@@ -83,7 +86,13 @@ class JabatanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $jabatan = Jabatan::find($id);
+
+        $jabatan->kode = $request->kode;
+        $jabatan->jabatan = $request->jabatan;
+        $jabatan->save();
+
+        return redirect('/jabatan');
     }
 
     /**
@@ -94,6 +103,9 @@ class JabatanController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $jab = Jabatan::find($id);
+        $jab->delete();
+
+        return redirect('/jabatan');
     }
 }
